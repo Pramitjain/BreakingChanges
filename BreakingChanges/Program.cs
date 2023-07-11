@@ -4,3 +4,4 @@ builder.Services.AddGraphQLServer().AddTypes();
 var app = builder.Build();
 app.MapGraphQL();
 app.Run();
+ 
