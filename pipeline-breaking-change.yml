@@ -4,6 +4,14 @@ pr:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  SYSTEM_PULLREQUEST_PULLREQUESTID: $(System.PullRequest.PullRequestId)
+  SYSTEM_PULLREQUEST_TARGETBRANCH: $(System.PullRequest.TargetBranch)
+  SYSTEM_PULLREQUEST_SOURCEBRANCH: $(System.PullRequest.SourceBranch)
+  SYSTEM_PULLREQUEST_SOURCECOMMITID: $(System.PullRequest.SourceCommitId)
+
 steps:
   - task: UseDotNet@2
     inputs:
