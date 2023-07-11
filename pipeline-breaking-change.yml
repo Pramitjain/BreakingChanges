@@ -1,5 +1,5 @@
 pr:
-  - main
+  - master
 
 pool:
   vmImage: ubuntu-latest
@@ -11,7 +11,7 @@ steps:
       includePreviewVersions: false
   - script: |
       dotnet tool install --tool-path . graphql-breaking-schema-change-detector
-      ./breaking-change pr --file examples/CodeFirstHotChocolate/Test/__snapshots__/SchemaSnapshotTest.GenerateSchema_CompareWithSnapshot.snap
+      ./breaking-change pr --file BreakingChanges/Test/__snapshots__/SchemaSnapshotTest.GenerateSchema_CompareWithSnapshot.snap
     env:
       SYSTEM_ACCESSTOKEN: $(System.AccessToken)
     displayName: "Run Breaking Change Detector"
